@@ -7,41 +7,53 @@ using System.Globalization;
 namespace ChefRisingStar.Models
 {
     [DebuggerDisplay("{GetDebuggerDisplay}")]
-    public class FoodPrint
+    public class FoodPrintCategories
     {
         [JsonProperty("ingredient")]
         public string Ingredient { get; set; }
 
         [JsonProperty("land_usage")]
-        public long LandUsage { get; set; }
+        public double LandUsage { get; set; }
 
         [JsonProperty("farming")]
-        public long Farming { get; set; }
+        public double Farming { get; set; }
 
         [JsonProperty("animal_feed")]
-        public long AimalFeed { get; set; }
+        public double AimalFeed { get; set; }
 
         [JsonProperty("processing")]
-        public long Processing { get; set; }
+        public double Processing { get; set; }
 
         [JsonProperty("transport")]
-        public long Transport { get; set; }
+        public double Transport { get; set; }
 
         [JsonProperty("retail")]
-        public long Retail { get; set; }
+        public double Retail { get; set; }
 
         [JsonProperty("packaging")]
-        public long Packaging { get; set; }
+        public double Packaging { get; set; }
 
         [JsonProperty("waste")]
-        public long Waste { get; set; }
+        public double Waste { get; set; }
 
         [JsonProperty("totalCO2")]
-        public long TotalCO2 { get; set; }
+        public double TotalCO2 { get; set; }
+
+        [JsonProperty("weight")]
+        public double Weight { get; set; }
+
+        [JsonProperty("measured_unit")]
+        public string Unit { get; set; }
+
+        [JsonProperty("diet_type")]
+        public string DietType { get; set; }
+
+        [JsonProperty("frequency")]
+        public string Frequency { get; set; }
 
         private string GetDebuggerDisplay()
         {
-            return $"{Ingredient} - {TotalCO2}";
+            return $"{Ingredient} - {Ingredient}";
         }
     }
 
@@ -71,19 +83,28 @@ namespace ChefRisingStar.Models
     }
 
     [DebuggerDisplay("{GetDebuggerDisplay}")]
-    public class OtherFoodPrint
+    public class FoodPrint
     {
         [JsonProperty("ingredient")]
         public string Ingredient { get; set; }
 
-        [JsonProperty("product_emission")]
-        public long ProductEmission { get; set; }
+        [JsonProperty("product_emission_percentage")]
+        public double ProductEmission { get; set; }
 
-        [JsonProperty("transport_emission")]
-        public string TransportEmission { get; set; }
+        [JsonProperty("totalCO2")]
+        public double TotalCO2 { get; set; }
 
-        [JsonProperty("waste_emission")]
-        public string WasteEmission { get; set; }
+        [JsonProperty("weight")]
+        public double Weight { get; set; }
+
+        [JsonProperty("measured_unit")]
+        public string Unit { get; set; }
+
+        [JsonProperty("diet_type")]
+        public string DietType { get; set; }
+
+        [JsonProperty("frequency")]
+        public string Frequency { get; set; }
 
         private string GetDebuggerDisplay()
         {

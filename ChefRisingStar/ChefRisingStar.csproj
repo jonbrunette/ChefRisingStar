@@ -26,6 +26,9 @@
     <Compile Update="Views\AchievementDetailPage.xaml.cs">
       <DependentUpon>AchievementDetailPage.xaml</DependentUpon>
     </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="ViewModels\GlobalFootPrintViewModel.cs">
+      <LogicalName>ç</LogicalName>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Remove="Newtonsoft.Json" />
@@ -35,8 +38,18 @@
     <None Remove="Microsoft.AspNet.WebApi.Core" />
     <None Remove="Microsoft.AspNetCore.Hosting" />
     <None Remove="Microsoft.AspNetCore.Hosting.Abstractions" />
+    <None Remove="sample\foodprint.json" />
+    <None Remove="sample\annual_foodprint.json" />
+    <None Remove="recipes.json" />
+    <None Remove="sample\otherCategory.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Converters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="sample\foodprint.json" />
+    <EmbeddedResource Include="sample\annual_foodprint.json" />
+    <EmbeddedResource Include="recipes.json" />
+    <EmbeddedResource Include="sample\otherCategory.json" />
   </ItemGroup>
 </Project>

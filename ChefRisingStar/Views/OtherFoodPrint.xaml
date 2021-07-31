@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ChefRisingStar.ViewModels"
+             xmlns:model="clr-namespace:ChefRisingStar.Models"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:xyt="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="ChefRisingStar.Views.OtherFootPrint"
+             xmlns:behaviours="clr-namespace:ChefRisingStar.Behaviours"
+             Title="{Binding Title}">
+<ContentPage.Content x:DataType="local:GlobalFootPrintViewModel">
+    <RefreshView>
+        <Grid>
+            <Frame CornerRadius="25" BackgroundColor="WhiteSmoke">
+                <ScrollView>
+                    <ListView BackgroundColor="White" ItemsSource="{Binding IngredientFoodPrintCategories}" HasUnevenRows="true">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Frame BorderColor="Gray"
+                                                CornerRadius="5"
+                                                Padding="8">
+                                                <StackLayout>
+                                                <Label Text="{Binding Ingredient} "
+                                                    FontSize="Medium"
+                                                    FontAttributes="Bold" />
+                                                <BoxView Color="Gray"
+                                                        HeightRequest="3"
+                                                        WidthRequest="300"
+                                                        HorizontalOptions="Fill" />
+                                                    <Label>  
+                                                        <Label.FormattedText>  
+                                                            <FormattedString>  
+                                                                <Span Text="{Binding Weight}" FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text=" " FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text="CO2 in grams" TextColor="Black"/>  
+                                                            </FormattedString>  
+                                                       </Label.FormattedText>  
+                                                    </Label>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Frame BorderColor="Gray"
+                                                CornerRadius="5"
+                                                Padding="8">
+                                                <StackLayout>
+                                                <Label Text="Farming"
+                                                    FontSize="Medium"
+                                                    FontAttributes="Bold" />
+                                                <BoxView Color="Gray"
+                                                        HeightRequest="3"
+                                                        WidthRequest="300"
+                                                        HorizontalOptions="Fill" />
+                                                    <Label>  
+                                                        <Label.FormattedText>  
+                                                            <FormattedString>  
+                                                                <Span Text="{Binding Farming}" FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text=" " FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text="CO2 in grams" TextColor="Black"/>  
+                                                            </FormattedString>  
+                                                       </Label.FormattedText>  
+                                                    </Label>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Frame BorderColor="Gray"
+                                                CornerRadius="5"
+                                                Padding="8">
+                                                <StackLayout>
+                                                <Label Text="AimalFeed"
+                                                    FontSize="Medium"
+                                                    FontAttributes="Bold" />
+                                                <BoxView Color="Gray"
+                                                        HeightRequest="3"
+                                                        WidthRequest="300"
+                                                        HorizontalOptions="Fill" />
+                                                    <Label>  
+                                                        <Label.FormattedText>  
+                                                            <FormattedString>  
+                                                                <Span Text="{Binding AimalFeed}" FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text=" " FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text="CO2 in grams" TextColor="Black"/>  
+                                                            </FormattedString>  
+                                                       </Label.FormattedText>  
+                                                    </Label>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                            <Frame BorderColor="Gray"
+                                                CornerRadius="5"
+                                                Padding="8">
+                                                <StackLayout>
+                                                <Label Text="Processing"
+                                                    FontSize="Medium"
+                                                    FontAttributes="Bold" />
+                                                <BoxView Color="Gray"
+                                                        HeightRequest="3"
+                                                        WidthRequest="300"
+                                                        HorizontalOptions="Fill" />
+                                                    <Label>  
+                                                        <Label.FormattedText>  
+                                                            <FormattedString>  
+                                                                <Span Text="{Binding Processing}" FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text=" " FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text="CO2 in grams" TextColor="Black"/>  
+                                                            </FormattedString>  
+                                                       </Label.FormattedText>  
+                                                    </Label>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                            <Frame BorderColor="Gray"
+                                                CornerRadius="5"
+                                                Padding="8">
+                                                <StackLayout>
+                                                <Label Text="Transport"
+                                                    FontSize="Medium"
+                                                    FontAttributes="Bold" />
+                                                <BoxView Color="Gray"
+                                                        HeightRequest="3"
+                                                        WidthRequest="300"
+                                                        HorizontalOptions="Fill" />
+                                                    <Label>  
+                                                        <Label.FormattedText>  
+                                                            <FormattedString>  
+                                                                <Span Text="{Binding Transport}" FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text=" " FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text="CO2 in grams" TextColor="Black"/>  
+                                                            </FormattedString>  
+                                                       </Label.FormattedText>  
+                                                    </Label>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                            <Frame BorderColor="Gray"
+                                                CornerRadius="5"
+                                                Padding="8">
+                                                <StackLayout>
+                                                <Label Text="Retail"
+                                                    FontSize="Medium"
+                                                    FontAttributes="Bold" />
+                                                <BoxView Color="Gray"
+                                                        HeightRequest="3"
+                                                        WidthRequest="300"
+                                                        HorizontalOptions="Fill" />
+                                                    <Label>  
+                                                        <Label.FormattedText>  
+                                                            <FormattedString>  
+                                                                <Span Text="{Binding Retail}" FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text=" " FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text="CO2 in grams" TextColor="Black"/>  
+                                                            </FormattedString>  
+                                                       </Label.FormattedText>  
+                                                    </Label>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                            <Frame BorderColor="Gray"
+                                                CornerRadius="5"
+                                                Padding="8">
+                                                <StackLayout>
+                                                <Label Text="Packaging"
+                                                    FontSize="Medium"
+                                                    FontAttributes="Bold" />
+                                                <BoxView Color="Gray"
+                                                        HeightRequest="3"
+                                                        WidthRequest="300"
+                                                        HorizontalOptions="Fill" />
+                                                    <Label>  
+                                                        <Label.FormattedText>  
+                                                            <FormattedString>  
+                                                                <Span Text="{Binding Packaging}" FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text=" " FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text="CO2 in grams" TextColor="Black"/>  
+                                                            </FormattedString>  
+                                                       </Label.FormattedText>  
+                                                    </Label>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                            <Frame BorderColor="Gray"
+                                                CornerRadius="5"
+                                                Padding="8">
+                                                <StackLayout>
+                                                <Label Text="Waste"
+                                                    FontSize="Medium"
+                                                    FontAttributes="Bold" />
+                                                <BoxView Color="Gray"
+                                                        HeightRequest="3"
+                                                        WidthRequest="300"
+                                                        HorizontalOptions="Fill" />
+                                                    <Label>  
+                                                        <Label.FormattedText>  
+                                                            <FormattedString>  
+                                                                <Span Text="{Binding Waste}" FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text=" " FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text="CO2 in grams" TextColor="Black"/>  
+                                                            </FormattedString>  
+                                                       </Label.FormattedText>  
+                                                    </Label>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                            <Frame BorderColor="Gray"
+                                                CornerRadius="5"
+                                                Padding="8">
+                                                <StackLayout>
+                                                <Label Text="Total Carbon Food Print"
+                                                    FontSize="Medium"
+                                                    FontAttributes="Bold" />
+                                                <BoxView Color="Gray"
+                                                        HeightRequest="3"
+                                                        WidthRequest="300"
+                                                        HorizontalOptions="Fill" />
+                                                    <Label>  
+                                                        <Label.FormattedText>  
+                                                            <FormattedString>  
+                                                                <Span Text="{Binding TotalCO2}" FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text=" " FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text="CO2 in grams" TextColor="Black"/>  
+                                                            </FormattedString>  
+                                                       </Label.FormattedText>  
+                                                    </Label>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                    </StackLayout>                                                                                 
+                                </ViewCell>                                       
+                            </DataTemplate>
+                        </ListView.ItemTemplate>                                              
+                    </ListView>
+                </ScrollView>
+                
+            </Frame>
+        </Grid>
+    </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

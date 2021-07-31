@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ChefRisingStar.ViewModels"
              xmlns:model="clr-namespace:ChefRisingStar.Models"
@@ -7,19 +7,122 @@
              ios:Page.UseSafeArea="True"
              xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:xyt="http://xamarin.com/schemas/2020/toolkit"
-             x:Class="ChefRisingStar.Views.FoodPrintsDetailPage"
+             x:Class="ChefRisingStar.Views.FootPrintPage"
              xmlns:behaviours="clr-namespace:ChefRisingStar.Behaviours"
-             Title="{Binding section}">
-
-   <ContentPage.Content>
-        <RefreshView Grid.Row="3" x:DataType="local:FoodPrintViewModel" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-            <Grid>
-                <StackLayout VerticalOptions="FillAndExpand">
-                    <Grid>
-                        <Label Text="{Binding Title}" TextDecorations="Underline"  />
-                    </Grid>
-                 </StackLayout>
-            </Grid>
-        </RefreshView>
-           </ContentPage.Content>
+             Title="{Binding Title}">
+<ContentPage.Content x:DataType="local:GlobalFootPrintViewModel">
+    <RefreshView>
+        <Grid>
+            <Frame CornerRadius="25" BackgroundColor="WhiteSmoke">
+                <ScrollView>
+                    <ListView BackgroundColor="White" ItemsSource="{Binding IngredientFoodPrint}" HasUnevenRows="true">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout Orientation="Horizontal">
+                                            <!--<Label Text="{Binding Ingredient}"/>
+                                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Weight}" HorizontalOptions="EndAndExpand" WidthRequest="22" FontSize="Small" LineBreakMode="NoWrap"/>
+                                            <Label Grid.Row="0" Grid.Column="2" Text="{Binding Unit}"/>-->
+                                            <Frame BorderColor="Gray"
+                                                CornerRadius="5"
+                                                Padding="8">
+                                                <StackLayout>
+                                                <Label Text="{Binding Ingredient} "
+                                                    FontSize="Medium"
+                                                    FontAttributes="Bold" />
+                                                <BoxView Color="Gray"
+                                                        HeightRequest="3"
+                                                        WidthRequest="300"
+                                                        HorizontalOptions="Fill" />
+                                                    <Label>  
+                                                        <Label.FormattedText>  
+                                                            <FormattedString>  
+                                                                <Span Text="{Binding Weight}" FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text=" " FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text="{Binding Unit}" TextColor="Black"/>  
+                                                            </FormattedString>  
+                                                       </Label.FormattedText>  
+                                                    </Label>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Frame BorderColor="Gray"
+                                                CornerRadius="5"
+                                                Padding="8">
+                                                <StackLayout>
+                                                <Label Text="Frequency"
+                                                    FontSize="Medium"
+                                                    FontAttributes="Bold" />
+                                                <BoxView Color="Gray"
+                                                        HeightRequest="3"
+                                                        WidthRequest="300"
+                                                        HorizontalOptions="Fill" />
+                                                <Label Text="{Binding Frequency}" FontSize="Medium" FontAttributes="Bold"/>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                         <StackLayout Orientation="Horizontal">
+                                            <Frame BorderColor="Gray"
+                                                CornerRadius="5"
+                                                Padding="8">
+                                                <StackLayout>
+                                                <Label Text="DietType"
+                                                    FontSize="Medium"
+                                                    FontAttributes="Bold" />
+                                                <BoxView Color="Gray"
+                                                        HeightRequest="3"
+                                                        WidthRequest="300"
+                                                        HorizontalOptions="Fill" />
+                                                <Label Text="{Binding DietType}" FontSize="Medium" FontAttributes="Bold"/>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                           <StackLayout Orientation="Horizontal">
+                                            <Frame BorderColor="Gray"
+                                                CornerRadius="5"
+                                                Padding="8">
+                                                <StackLayout>
+                                                <Label Text="Carbon Food Print"
+                                                    FontSize="Medium"
+                                                    FontAttributes="Bold" />
+                                                <BoxView Color="Gray"
+                                                        HeightRequest="3"
+                                                        WidthRequest="300"
+                                                        HorizontalOptions="Fill" />
+                                                <Label Text="{Binding TotalCO2}" FontSize="Medium" FontAttributes="Bold"/>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                          <StackLayout Orientation="Horizontal">
+                                            <Frame BorderColor="Gray"
+                                                CornerRadius="5"
+                                                Padding="8">
+                                                <StackLayout>
+                                                <Label Text="Carbon Emission by Percentage"
+                                                    FontSize="Medium"
+                                                    FontAttributes="Bold" />
+                                                <BoxView Color="Gray"
+                                                        HeightRequest="3"
+                                                        WidthRequest="300"
+                                                        HorizontalOptions="Fill" />
+                                                <Label Text="{Binding ProductEmission}" FontSize="Medium" FontAttributes="Bold"/>
+                                                     <Button Text="Click to see more!" Clicked="Next" Margin="5" />
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                    </StackLayout>
+                                                                                 
+                                </ViewCell>
+                                       
+                            </DataTemplate>
+                        </ListView.ItemTemplate>                                              
+                    </ListView>
+                </ScrollView>
+                
+            </Frame>
+        </Grid>
+    </RefreshView>
+    </ContentPage.Content>
 </ContentPage>

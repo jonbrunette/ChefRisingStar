@@ -85,7 +85,7 @@
         <ShellContent Route="RecipesListPage" ContentTemplate="{DataTemplate local:RecipesListPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Food Footprint" Icon="footprint64.png">
-        <ShellContent Route="FoodPrintsDetailPage" ContentTemplate="{DataTemplate local:FoodPrintsDetailPage}" />
+        <ShellContent Route="GlobalFootPrintPage" ContentTemplate="{DataTemplate local:GlobalFootPrintPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Achievements" Icon="trophy64.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AchievementsPage}" />

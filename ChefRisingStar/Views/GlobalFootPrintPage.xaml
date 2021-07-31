@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ChefRisingStar.ViewModels"
+             xmlns:model="clr-namespace:ChefRisingStar.Models"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:xyt="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="ChefRisingStar.Views.GlobalFootPrintPage"
+             xmlns:behaviours="clr-namespace:ChefRisingStar.Behaviours"
+             Title="{Binding Title}">
+    
+    <ContentPage.Resources>
+    <ResourceDictionary>
+        <ControlTemplate x:Key="CustomTab">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="{TemplateBinding Text}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                       Grid.Row="0" TextColor="{TemplateBinding CurrentTextColor}" FontSize="18" FontAttributes="Bold" 
+                       Margin="10,-0,-20,-15"  WidthRequest="100" />
+                <BoxView Color="FloralWhite" HeightRequest="8" WidthRequest="100"  Grid.Row="1" Margin="10,-0,-20,-15" 
+                            HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"
+                            CornerRadius="30"  IsVisible="{TemplateBinding IsSelected}"/>
+            </Grid>
+        </ControlTemplate>
+        <Style
+            x:Key="CustomTabStyle"
+            TargetType="xyt:TabView">
+            <Setter
+			    Property="IsTabTransitionEnabled"
+			    Value="True" />
+            <Setter
+			    Property="TabStripHeight"
+			    Value="48" />
+            <!--<Setter
+			    Property="TabContentBackgroundColor"
+			    Value="#484848" />-->
+            <Setter
+			    Property="TabStripPlacement"
+			    Value="Top" />
+        </Style>
+    </ResourceDictionary>
+        </ContentPage.Resources>
+
+    <ContentPage.Content x:DataType="viewmodel:GlobalFootPrintViewModel">
+        <RefreshView Grid.Row="3">
+            <Grid>
+                <StackLayout VerticalOptions="FillAndExpand">                    
+                    <Grid VerticalOptions="FillAndExpand" Margin="0,-30,0,0" Padding="0" >
+                        <Frame CornerRadius="25">
+                            <Grid>
+                                <xyt:TabView Style="{StaticResource CustomTabStyle}">
+                                    <xyt:TabViewItem ControlTemplate="{StaticResource CustomTab}"
+                                Text="Ingredients" TextColorSelected="Black">
+                                        <Grid>
+                                            <Frame CornerRadius="25" BackgroundColor="WhiteSmoke">
+                                                <ScrollView>
+                                                  <ListView BackgroundColor="White" IsRefreshing="{Binding IsBusy, Mode=OneWay}" ItemsSource="{Binding Ingredients}" ItemSelected="SelectedIngredient">
+                                                           <ListView.ItemTemplate>
+                                                              <DataTemplate>
+                                                                 <ViewCell>
+                                                                    <StackLayout Orientation="Vertical">
+                                                                        <StackLayout Orientation="Horizontal">
+                                                                            <Label Text="{Binding Name}"/>
+                                                                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Amount}" HorizontalOptions="EndAndExpand" WidthRequest="12" FontSize="Small" LineBreakMode="NoWrap"/>
+                                                                            <Label Grid.Row="0" Grid.Column="2" Text="{Binding Unit}"/>                                                                           
+                                                                        </StackLayout>
+                                                                    </StackLayout>                                                                     
+                                                             </ViewCell>
+                                                          </DataTemplate>
+                                                      </ListView.ItemTemplate>                                              
+                                                  </ListView>
+                                                </ScrollView>
+                                            </Frame>
+                                        </Grid>
+                                    </xyt:TabViewItem>
+                                    <xyt:TabViewItem ControlTemplate="{StaticResource CustomTab}" Text="Total CO2" TextColorSelected="DarkGray">
+                                        <Grid BackgroundColor="White">
+                                            <Frame CornerRadius="25" BackgroundColor="FloralWhite">
+                                                <ScrollView>
+
+                                                </ScrollView>
+                                            </Frame>
+                                        </Grid>
+                                    </xyt:TabViewItem>
+                                </xyt:TabView>
+                            </Grid>
+
+                        </Frame>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+        </RefreshView>
+    </ContentPage.Content>    
+</ContentPage>
