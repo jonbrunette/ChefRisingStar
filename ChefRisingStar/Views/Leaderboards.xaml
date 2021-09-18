@@ -6,120 +6,142 @@
              xmlns:model="clr-namespace:ChefRisingStar.Models"  
              Title="{Binding Title}">
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Accent">#ffd1ff</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
+    <AbsoluteLayout>
+        <CarouselView
+            x:Name="LeaderboardCarousel"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            IndicatorView="indicatorview">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <AbsoluteLayout>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="150" />
+                            </Grid.RowDefinitions>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="150" />
-        </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
 
-         <Grid.ColumnDefinitions>
-                   <ColumnDefinition/>
-         </Grid.ColumnDefinitions>
-
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="leaderboard.png" VerticalOptions="Center" HeightRequest="64" />
-                </ContentView>
-            </StackLayout>
+                            <StackLayout BackgroundColor="{Binding Color}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                                    <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                                        <Image Source="leaderboard.png" VerticalOptions="Center" HeightRequest="64" />
+                                    </ContentView>
+                                </StackLayout>
 
 
-            <StackLayout Spacing="2" BackgroundColor="Black">
-                <Label  Background="AliceBlue" Padding="10" FontAttributes="Bold" FontSize="30">Regional Leaderboard</Label>
-                <Grid
+                                <StackLayout Spacing="2" BackgroundColor="Black">
+                                    <Label  Background="AliceBlue" Padding="10" FontAttributes="Bold" FontSize="30" Text="{Binding Name}"></Label>
+                                    <Grid
                         x:Name="RankingGrid"
                         Background="AliceBlue"
                         ColumnSpacing="0"
                         RowSpacing="1"
                         >
 
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>    
-                        </Grid.RowDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30"/>
+                                        </Grid.RowDefinitions>
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
 
 
-                       <Label Text="Ranking" Grid.Row="0" Grid.Column="0" TextColor="Black" FontSize="20" HorizontalOptions="Center"
+                                        <Label Text="Ranking" Grid.Row="0" Grid.Column="0" TextColor="Black" FontSize="20" HorizontalOptions="Center"
                        VerticalOptions="Center"> </Label>
-                       <Label Text="Recipe" Grid.Row="0" Grid.Column="1" TextColor="Black" FontSize="20" HorizontalOptions="Center"
+                                        <Label Text="Recipe" Grid.Row="0" Grid.Column="1" TextColor="Black" FontSize="20" HorizontalOptions="Center"
                        VerticalOptions="Center"> </Label>
-                       <Label Text="Rating" Grid.Row="0" Grid.Column="2" TextColor="Black" FontSize="20" HorizontalOptions="Center"
+                                        <Label Text="Rating" Grid.Row="0" Grid.Column="2" TextColor="Black" FontSize="20" HorizontalOptions="Center"
                        VerticalOptions="Center"> </Label>
-                       <Label Text="Link" Grid.Row="0" Grid.Column="3" TextColor="Black" FontSize="20" HorizontalOptions="Center"
+                                        <Label Text="Link" Grid.Row="0" Grid.Column="3" TextColor="Black" FontSize="20" HorizontalOptions="Center"
                        VerticalOptions="Center"> </Label>
+   
+                                    
+                                    </Grid>
 
-                    
-                  </Grid>
-              
-                
-                <Grid>
-                    <Grid.RowDefinitions>
-                          <RowDefinition Height="500"/>    
-                     </Grid.RowDefinitions>
-                 <ListView x:Name="dataListView" >
-                                 <ListView.ItemTemplate>
-                                     <DataTemplate>
-                                         <ViewCell>
-                                             <Grid
+                                    
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="500"/>
+                                        </Grid.RowDefinitions>
+                                        <ListView x:Name="dataListView" ItemsSource="{Binding RankList}">
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <ViewCell>
+                                                        <Grid
                                                  x:Name="DataGrid"
                                                     Background="whiteSmoke"
                                                     ColumnSpacing="0"
                                                     RowSpacing="0">
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="30"/>    
-                                                </Grid.RowDefinitions>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="30"/>
+                                                            </Grid.RowDefinitions>
 
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition/>
-                                                    <ColumnDefinition/>
-                                                    <ColumnDefinition/>
-                                                    <ColumnDefinition/>
-                                                 </Grid.ColumnDefinitions>
-                                                    
-                                                    <Label Text="{Binding Ranking}" Grid.Column="0" FontSize="25" FontAttributes="Bold" FontFamily="Open Sans" TextColor="Black" HorizontalOptions="Center"
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition/>
+                                                                <ColumnDefinition/>
+                                                                <ColumnDefinition/>
+                                                                <ColumnDefinition/>
+                                                            </Grid.ColumnDefinitions>
+
+                                                            <Label Text="{Binding Ranking}" Grid.Column="0" FontSize="25" FontAttributes="Bold" FontFamily="Open Sans" TextColor="Black" HorizontalOptions="Center"
                                                         VerticalOptions="Center" />
-                                                    <Label Text="{Binding Recipe}" Grid.Column="1" FontSize="15" FontFamily="Open Sans" TextColor="Black" HorizontalOptions="Center"
+                                                            <Label Text="{Binding Recipe}" Grid.Column="1" FontSize="15" FontFamily="Open Sans" TextColor="Black" HorizontalOptions="Center"
                                                     VerticalOptions="CenterAndExpand" />
-                                                    <Label Text="{Binding Rating}" Grid.Column="2" FontSize="18" FontFamily="Open Sans" TextColor="Black" HorizontalOptions="Center"
+                                                            <Label Text="{Binding Rating}" Grid.Column="2" FontSize="18" FontFamily="Open Sans" TextColor="Black" HorizontalOptions="Center"
                                                         VerticalOptions="Center"/>
-                                                    <Button Text="Get Recipe" Grid.Column="3" FontSize="10" BackgroundColor="LightSkyBlue"/>
-                                                    <!--Label Text="{Binding Link}" Grid.Column="3"  FontSize="15" FontFamily="Open Sans" TextColor="Black" HorizontalOptions="Center"
+                                                            <Button Text="Get Recipe" Grid.Column="3" FontSize="10" BackgroundColor="LightSkyBlue"/>
+                                                            <!--Label Text="{Binding Link}" Grid.Column="3"  FontSize="15" FontFamily="Open Sans" TextColor="Black" HorizontalOptions="Center"
                                                          VerticalOptions="Center"/-->
-                                              </Grid>
-                                        </ViewCell>
-                                    </DataTemplate>
-                            </ListView.ItemTemplate>
-                     </ListView>
-                    </Grid>
+                                                        </Grid>
+                                                    </ViewCell>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                    </Grid>
 
-                 
+                                    <StackLayout>
+                                        <Grid
+                        x:Name="DataGrid"
+                        Background="AliceBlue"
+                        ColumnSpacing="0"
+                        RowSpacing="2"
+                        Grid.Row="2">
 
-          </StackLayout>        
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
 
 
+                                            <Label Text="1" Grid.Row="0" Grid.Column="0" TextColor="Black" FontSize="20" HorizontalOptions="Center"
+                       VerticalOptions="Center"></Label>
+                                            <Label Text="{Binding Recipe1}" Grid.Row="0" Grid.Column="1" TextColor="Black" FontSize="15" HorizontalOptions="Center"
+                       VerticalOptions="Center"></Label>
+                                            <Label Text="{Binding Score1}" Grid.Row="0" Grid.Column="2" TextColor="Black" FontSize="20" HorizontalOptions="Center"
+                       VerticalOptions="Center"></Label>
+                                            <Label Text="{Binding Link1}" Grid.Row="0" Grid.Column="3" TextColor="Black" FontSize="18" HorizontalOptions="Center"
+                       VerticalOptions="Center"></Label>
 
+                                        </Grid>
 
-
-               
-
-           
-                   
-                 
-                                
-                               
-      
-                    <!--Grid x:Name="DataGrid"
+                                    </StackLayout>
+                                    <!--Grid x:Name="DataGrid"
                           Background="Pink"
                           ColumnSpacing="0"
                           RowSpacing="0">
@@ -156,26 +178,39 @@
                         </RefreshView>
                         </Grid-->
 
-                 
 
 
-     </StackLayout>
-
-
-          
-    
-
-    
-     
-        
-
-
-        
+                                </StackLayout>
+                            </StackLayout>
 
 
 
 
-    </Grid>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </Grid>
+                    </AbsoluteLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <IndicatorView
+            x:Name="indicatorview"
+            AbsoluteLayout.LayoutBounds="0.5,0.95,100,100"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            IndicatorColor="LightGray"
+            IndicatorSize="10"
+            SelectedIndicatorColor="Black" />
+    </AbsoluteLayout>
 
 
 </ContentPage>
