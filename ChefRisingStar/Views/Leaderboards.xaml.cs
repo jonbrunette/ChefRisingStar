@@ -42,7 +42,7 @@ namespace ChefRisingStar.Views
                     ,
                   {
                     ""Ranking"": ""3"",
-                    ""Recipe"": ""Corn Bread"",
+                    ""Recipe"": ""Cornbread"",
                     ""Rating"": ""92"",
                     ""Link"": ""www.google.com""
                     },
