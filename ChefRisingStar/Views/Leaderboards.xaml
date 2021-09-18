@@ -20,17 +20,62 @@
                                 <RowDefinition Height="150" />
                             </Grid.RowDefinitions>
 
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-
+         <Grid.ColumnDefinitions>
+                   <ColumnDefinition/>
+         </Grid.ColumnDefinitions>
                             <StackLayout BackgroundColor="{Binding Color}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                                    <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                                        <Image Source="leaderboard.png" VerticalOptions="Center" HeightRequest="64" />
-                                    </ContentView>
-                                </StackLayout>
 
+                                <StackLayout HorizontalOptions="Center"
+                Orientation="Horizontal"
+                VerticalOptions="FillAndExpand"
+                >
+       <StackLayout VerticalOptions="End">
+           <Label Text="Student 1"
+                  HorizontalOptions="Center"
+                  FontSize="20">
+
+           </Label>
+           <BoxView Color="Silver"
+                    WidthRequest="90"
+                    HeightRequest="70"
+                    VerticalOptions="Center">
+
+           </BoxView>
+       </StackLayout>
+
+        <StackLayout VerticalOptions="End">
+           <Label Text="Student 2"
+                  TextColor="Gold"
+                  HorizontalOptions="Center"
+                  FontSize="20">
+
+           </Label>
+           <BoxView Color="Gold"
+                    WidthRequest="90"
+                    HeightRequest="90"
+                    VerticalOptions="Center">
+
+           </BoxView>
+       </StackLayout>
+
+<StackLayout VerticalOptions="End">
+           <Label Text="Student 3"
+                  TextColor="DarkGoldenrod"
+                  HorizontalOptions="Center"
+                  FontSize="20">
+
+           </Label>
+           <BoxView Color="Goldenrod"
+                    WidthRequest="90"
+                    HeightRequest="50"
+                    VerticalOptions="Center">
+
+           </BoxView>
+       </StackLayout>
+
+
+   </StackLayout>
+       
 
                                 <StackLayout Spacing="2" BackgroundColor="Black">
                                     <Label  Background="AliceBlue" Padding="10" FontAttributes="Bold" FontSize="30" Text="{Binding Name}"></Label>
@@ -180,23 +225,23 @@
 
 
 
-                                </StackLayout>
+            </StackLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                             </StackLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                         </Grid>
                     </AbsoluteLayout>
