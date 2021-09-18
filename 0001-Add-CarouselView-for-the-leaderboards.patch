@@ -1,3 +1,4 @@
+From e48a97754836690fb06066642befbb94d6171000 Mon Sep 17 00:00:00 2001
 From: Guillaume Militello <guillaume.militello@gmail.com>
 Date: Sat, 18 Sep 2021 15:43:43 -0400
 Subject: [PATCH 1/1] Add CarouselView for the leaderboards
@@ -7,6 +8,7 @@ Subject: [PATCH 1/1] Add CarouselView for the leaderboards
  ChefRisingStar/Views/Leaderboards.xaml    | 237 +++++++++++++---------
  ChefRisingStar/Views/Leaderboards.xaml.cs |  85 +-------
  3 files changed, 298 insertions(+), 185 deletions(-)
+ create mode 100644 ChefRisingStar/Models/LeaderboardModel.cs
 
 diff --git a/ChefRisingStar/Models/LeaderboardModel.cs b/ChefRisingStar/Models/LeaderboardModel.cs
 new file mode 100644
