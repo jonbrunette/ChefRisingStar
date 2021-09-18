@@ -5,7 +5,6 @@ using System.Diagnostics;
 namespace ChefRisingStar.Models
 {
 
-    [DebuggerDisplay("{GetDebuggerDisplay}")]
     public class Rank
     {
         [JsonProperty("Ranking")]

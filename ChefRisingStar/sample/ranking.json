@@ -1,15 +1,15 @@
 ﻿[
   {
-    "Ranking": "1",
-    "Recipe": "Recipe 1",
-    "Rating": 100,
-    "Link": "www.google.com"
+    ""Ranking"": ""1"",
+    ""Recipe"": ""Recipe 1"",
+    ""Rating"": ""100"",
+    ""Link"": ""www.google.com""
   },
-  {
-    "Ranking": "2",
-    "Recipe": "Recipe 2",
-    "Rating": 99,
-    "Link": "www.google.com"
+    {
+    ""Ranking"": ""2"",
+    ""Recipe"": ""Recipe 2"",
+    ""Rating"": ""99"",
+    ""Link"": ""www.google.com""
   },
   {
     "Ranking": "3",
