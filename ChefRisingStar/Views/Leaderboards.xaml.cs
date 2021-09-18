@@ -42,7 +42,7 @@ namespace ChefRisingStar.Views
                     ,
                   {
                     ""Ranking"": ""3"",
-                    ""Recipe"": ""Corn Bread"",
+                    ""Recipe"": ""Cornbread"",
                     ""Rating"": ""92"",
                     ""Link"": ""www.google.com""
                     },
@@ -61,7 +61,7 @@ namespace ChefRisingStar.Views
 
                     {
                     ""Ranking"": ""6"",
-                    ""Recipe"": ""Chilli Soup"",
+                    ""Recipe"": ""Chili Soup"",
                     ""Rating"": ""82"",
                     ""Link"": ""www.google.com""
                     },
