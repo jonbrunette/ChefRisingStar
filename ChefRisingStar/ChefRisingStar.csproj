@@ -29,6 +29,9 @@
     <Compile Update="Views\AchievementDetailPage.xaml.cs">
       <DependentUpon>AchievementDetailPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Leaderboards.xaml.cs">
+      <DependentUpon>Leaderboards.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Remove="Newtonsoft.Json" />
@@ -52,5 +55,10 @@
     <Folder Include="Converters\" />
     <Folder Include="Styles\" />
     <Folder Include="CustomRenderer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Leaderboards.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

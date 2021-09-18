@@ -1,0 +1,32 @@
+﻿[
+  {
+    "Ranking": "1",
+    "Recipe": "Recipe 1",
+    "Rating": 100,
+    "Link": "www.google.com"
+  },
+  {
+    "Ranking": "2",
+    "Recipe": "Recipe 2",
+    "Rating": 99,
+    "Link": "www.google.com"
+  },
+  {
+    "Ranking": "3",
+    "Recipe": "Recipe 3",
+    "Rating": 98,
+    "Link": "www.google.com"
+  },
+  {
+    "Ranking": "4",
+    "Recipe": "Recipe 4",
+    "Rating": 97,
+    "Link": "www.google.com"
+  },
+  {
+    "Ranking": "5",
+    "Recipe": "Recipe 5",
+    "Rating": 96,
+    "Link": "www.google.com"
+  }
+]
