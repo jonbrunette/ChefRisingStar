@@ -23,12 +23,13 @@
          <Grid.ColumnDefinitions>
                    <ColumnDefinition/>
          </Grid.ColumnDefinitions>
-                            <StackLayout BackgroundColor="{Binding Color}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                    <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
 
-                                <StackLayout HorizontalOptions="Center"
-                Orientation="Horizontal"
-                VerticalOptions="FillAndExpand"
-                >
+                    <StackLayout HorizontalOptions="Center"
+                                 Orientation="Horizontal"
+                                 VerticalOptions="FillAndExpand"
+                                 Padding="10"
+                                 >
        <StackLayout VerticalOptions="End">
            <Label Text="Student 1"
                   HorizontalOptions="Center"
@@ -78,10 +79,10 @@
        
 
                                 <StackLayout Spacing="2" BackgroundColor="Black">
-                                    <Label  Background="AliceBlue" Padding="10" FontAttributes="Bold" FontSize="30" Text="{Binding Name}"></Label>
+                                    <Label  Background="#b0c002" Padding="10" FontAttributes="Bold" FontSize="30" Text="{Binding Name}" TextColor="White"> </Label>
                                     <Grid
                         x:Name="RankingGrid"
-                        Background="AliceBlue"
+                        Background="#f8f8dc"
                         ColumnSpacing="0"
                         RowSpacing="1"
                         >
@@ -121,7 +122,7 @@
                                                     <ViewCell>
                                                         <Grid
                                                  x:Name="DataGrid"
-                                                    Background="whiteSmoke"
+                                                    Background="white"
                                                     ColumnSpacing="0"
                                                     RowSpacing="0">
                                                             <Grid.RowDefinitions>
@@ -248,6 +249,21 @@
                 </DataTemplate>
             </CarouselView.ItemTemplate>
         </CarouselView>
+
+           <Button
+        Grid.Row="0"
+        Margin="0,0,20,22"
+        BackgroundColor="Blue"
+        BorderRadius="35"
+        BorderWidth="1"
+        FontAttributes="Bold"
+        HeightRequest="70"
+        HorizontalOptions="Center"
+        Text="Add Recipe"
+        TextColor="White"
+        VerticalOptions="End"
+        WidthRequest="160" />
+
         <IndicatorView
             x:Name="indicatorview"
             AbsoluteLayout.LayoutBounds="0.5,0.95,100,100"
